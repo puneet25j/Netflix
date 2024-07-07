@@ -16,7 +16,7 @@ const TitleCards = ({ title, category, style }) => {
   }
 
   useEffect(() => {
-    fetch('http://localhost:8000/movies/list', config)
+    fetch(`${import.meta.env.VITE_URL}/movies/list`, config)
       .then((response) => response.json())
       .then((response) => setApiData(response))
       .catch((err) => console.error(err));

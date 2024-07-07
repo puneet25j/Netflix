@@ -16,7 +16,7 @@ const HeroBanner = () => {
   });
 
   useEffect(()=>{
-    fetch('http://localhost:8000/hero/')
+    fetch(`${import.meta.env.VITE_URL}/hero`)
       .then((response) => response.json())
       .then((response) => setHeroData(response))
       .catch((err) => console.error(err));

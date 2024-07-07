@@ -31,9 +31,10 @@ const Player = () => {
   };
 
   useEffect(() => {
-    fetch('http://localhost:8000/movies/video', config)
+    // use path movies/detail with vidsrc
+    fetch(`${import.meta.env.VITE_URL}/movies/video`, config)
       .then((response) => response.json())
-      .then((response) => setApiData(response[0]))
+      .then((response) => setApiData(response[0])) //remove [0] with vidsrcc link
       .catch((err) => console.error(err));
   }, []);
 
@@ -60,6 +61,7 @@ const Player = () => {
         <p>{apiData.published_at.slice(0, 10)}</p>
         <p>{apiData.name}</p>
         <p>{apiData.typeof}</p>
+        {/* use code below code with vidsrc link */}
         {/* <p>{apiData.release_date}</p>
         <p>{apiData.title}</p>
         <p>{apiData.vote_average}</p> */}
