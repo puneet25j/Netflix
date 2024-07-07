@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.hero-banner-mask {
+  mask-image: linear-gradient(to right, transparent, black 75%);
+  -webli-tmask-image: linear-gradient(to right, transparent, black 75%);
+}
+
+
+
+@layer base {
+  body {
+    @apply bg-black text-white font-poppins
+  }
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  .nav-links li {
+    @apply cursor-pointer
+  }
+
+  .footer-icons img {
+    @apply  w-6 md:w-[30px] cursor-pointer
+  }
+
+  .login-form-input {
+    @apply w-full h-12 bg-[#333] text-white my-3 mx-0 border-0 outline-none rounded py-4 px-5 text-base font-medium
+  }
+
+  .login-form-input::placeholder {
+    @apply text-base font-medium
+  }
+}
