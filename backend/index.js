@@ -10,10 +10,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: [
-      'https://puneet-netflix-backend.vercel.app',
-      'http://localhost:5173',
-    ],
+    origin: '*',
   })
 );
 app.use(bodyParser.json({extended:true}))
