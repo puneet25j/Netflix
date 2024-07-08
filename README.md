@@ -17,12 +17,12 @@ A Netflix clone built using React, demonstrating the use of modern web technolog
 - [Player Page](#Player-page)
 
 ### Login Page
-![Login Page]()
+![Login Page](./demo/Login.PNG)
 
 ### Home Page
-![Home Page]()
+![Home Page](./demo/Home.PNG)
 
 ### Player Page
-![Player Page]()
+![Player Page](./demo/Player.PNG)
 
 ## Installation
