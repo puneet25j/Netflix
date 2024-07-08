@@ -1,20 +1,22 @@
 /* eslint-disable no-undef */
 const express = require('express');
 const cors = require('cors');
-const bodyParser = require('body-parser')
+const bodyParser = require('body-parser');
 require('dotenv').config();
 const port = process.env.PORT;
 
-
 const app = express();
+
+app.use(bodyParser.json({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(
   cors({
     origin: '*',
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    allowedHeaders: 'Content-Type,Authorization',
   })
 );
-app.use(bodyParser.json({extended:true}))
-app.use(bodyParser.urlencoded({extended:true}))
 
 const options = {
   method: 'GET',
@@ -28,7 +30,7 @@ app.get('/', (req, res) => {
   res.json('hi');
 });
 
-app.get('/hero', (req, res)=> {
+app.get('/hero', (req, res) => {
   fetch(
     `https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1`,
     options
@@ -36,7 +38,7 @@ app.get('/hero', (req, res)=> {
     .then((response) => response.json())
     .then((json) => res.json(json.results[0]))
     .catch((err) => console.error('error:' + err));
-})
+});
 
 app.post('/movies/list', (req, res) => {
   const category = req.body.cat;
@@ -68,8 +70,4 @@ app.post('/movies/detail', (req, res) => {
     .catch((err) => console.error('error:' + err));
 });
 
-app.listen(port, () =>
-  console.log(
-    `Server is running on port: ${port}`
-  )
-);
+app.listen(port, () => console.log(`Server is running on port: ${port}`));
