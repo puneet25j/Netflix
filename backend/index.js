@@ -12,7 +12,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(
   cors({
-    origin: '*',
+    origin: [
+      'https://puneet-netflix-backend.vercel.app',
+      'https://localhost:5173',
+    ],
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     allowedHeaders: 'Content-Type,Authorization',
   })
