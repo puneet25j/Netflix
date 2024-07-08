@@ -12,7 +12,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(
   cors({
-    origin: ['https://netflix-beta-nine.vercel.app/', 'http://localhost:5173/'],
+    origin: ['https://netflix-beta-nine.vercel.app', 'http://localhost:5173'],
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     allowedHeaders: 'Content-Type,Authorization',
   })
