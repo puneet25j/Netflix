@@ -14,7 +14,7 @@ A Netflix clone built using React, demonstrating the use of modern web technolog
 - React-Toastify
 - Node + Express: For Backend
 ## Website Structure: 
-- [Login Page](lLogin-page)
+- [Login Page](#login-page)
 - [Home Page](#home-page)
 - [Player Page](#player-page)
 #### Login Page
